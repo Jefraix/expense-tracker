@@ -1,6 +1,6 @@
 import { Text } from 'react-native'
 
-const RecentExpensesExpenses = () => {
+const RecentExpenses = () => {
   return <Text>RecentExpenses Screen</Text>
 }
 
