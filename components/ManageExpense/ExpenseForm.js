@@ -25,7 +25,7 @@ const ExpenseForm = ({ submitButtonLabel, onCancel, onSubmit, defaultValues }) =
   const inputChangedHandler = (inputIdentifier, enteredValue) => {
     setInputs((curInputs) => {
       return {
-        ...curInputValues,
+        ...curInputs,
         [inputIdentifier]: { value: enteredValue, isValid: true },
       }
     });
@@ -34,8 +34,8 @@ const ExpenseForm = ({ submitButtonLabel, onCancel, onSubmit, defaultValues }) =
   const submitHandler = () => {
     const expenseData = {
       amount: +inputs.amount.value,
-      date: new Date(`${inputValues.date.value} 00:00:00`),
-      description: inputValues.description.value,
+      date: new Date(`${inputs.date.value} 00:00:00`),
+      description: inputs.description.value,
     };
 
     const amountIsValid = !isNaN(expenseData.amount) && expenseData.amount > 0
