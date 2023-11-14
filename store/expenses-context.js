@@ -52,7 +52,6 @@ const expensesReducer = (state, action) => {
       );
       const updatableExpense = state[updatableExpenseIndex];
       const updatedItem = {...updatableExpense,...action.payload.data}
-
       const updatedExpenses = [...state];
       updatedExpenses[updatableExpenseIndex] = updatedItem;
       return updatedExpenses;
@@ -78,7 +77,14 @@ const ExpensesContextProvider = ({ children }) => {
     dispatch({ type: "UPDATE", payload: { id: id, data: expenseData} })
   };
 
-  return <ExpensesContext.Provider>{children}</ExpensesContext.Provider>
+  const value = {
+    expenses: expensesState,
+    addExpense: addExpense,
+    deleteExpense: deleteExpense,
+    updateExpense: updateExpense,
+  };
+
+  return <ExpensesContext.Provider value={value}>{children}</ExpensesContext.Provider>
 }
 
 export default ExpensesContextProvider;
