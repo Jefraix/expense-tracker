@@ -5,7 +5,7 @@ import ExpensesContextProvider from './store/expenses-context';
 export default function App() {
   return (
     <>
-      <StatusBar style='auto'/>
+      <StatusBar style='light'/>
       <ExpensesContextProvider>
         <NavigationComponent />
       </ExpensesContextProvider>
