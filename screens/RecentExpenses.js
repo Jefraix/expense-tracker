@@ -15,8 +15,9 @@ const RecentExpenses = () => {
     const getExpenses = async () => {
       setIsFetching(true);
       const expenses = await fetchExpenses();
-      setIsFetching(false);
       expensesCtx.setExpenses(expenses);
+      setIsFetching(false);
+      console.log(expenses);
     };
 
     getExpenses();
